@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Container, Row, Col } from 'reactstrap';
 import { motion } from 'framer-motion';
-import heroImg from '../../assests/images/hero-img1.png';
 import './hero-section.css';
-import crown from '../../img/crown.png';
-import thumbup from '../../img/thumbup.png';
+import crown from '../../assests/crown.png';
+import thumbup from '../../assests/thumbup.png';
+import upwork from '../../assests/Upwork.png' ;
 
 import FloatinDiv from '../FloatingDiv/FloatingDiv';
 
@@ -131,7 +131,7 @@ const HeroSection = () => {
           </Col>
           <Col lg="4" md="4" sm="12">
             <div className="hero__services">
-              <img src={crown} alt="Crown icon" />
+              <img src={upwork} alt="Crown icon" />
               <h3 className="mb-3">24/7 Support</h3>
               <p>
                 Our app offers 24/7 support, so you can easily get in touch with

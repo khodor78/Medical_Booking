@@ -20,6 +20,7 @@ function Login() {
         toast.success(response.data.message);
         localStorage.setItem('token', response.data.data);
         navigate('/');
+        // window.location.reload();  
       } else {
         toast.error(response.data.message);
       }

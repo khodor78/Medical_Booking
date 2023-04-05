@@ -32,26 +32,29 @@ const Box = styled.div`
   display: flex-start;
   justify-content: center;
   align-items: center;
-`;
-const Right = styled.div`
-  position: absolute;
-  left: 35.5%;
-  width: 100%;
-  min-height: 100vh;
-  padding-left: 1rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #202020;
-  p {
-    font-size: ${(props) => props.theme.fontlg};
-    font-weight: 300;
-    width: 80%;
-    margin: 0 auto;
+  @media only screen and (max-width: 1255px) {
+  display: none;
   }
 `;
+// const Right = styled.div`
+//   position: absolute;
+//   left: 35.5%;
+//   width: 100%;
+//   min-height: 100vh;
+//   padding-left: 1rem;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   background-color: #202020;
+//   p {
+//     font-size: ${(props) => props.theme.fontlg};
+//     font-weight: 300;
+//     width: 80%;
+//     margin: 0 auto;
+//   }
+// `;
 const Title = styled.h1`
-  font-size: ${(props) => props.theme.fontxxl};
+  font-size: 2r em;
   font-family: 'Montserrat', sans-serif;
   font-weight: 300;
   position: absolute;
@@ -60,6 +63,18 @@ const Title = styled.h1`
   left: 50%;
   z-index: 11;
   text-shadow: 1px 1px 1px ${(props) => props.theme.fontxxxl};
+
+  @media only screen and (max-width: 1255px) {
+  left:5%;
+  top:12%;
+  font-size: 3rem;
+  line-height: 5rem;
+
+  }
+  @media only screen and (max-width: 800px) {
+top:20%  }
+@media only screen and (max-width: 600px) {
+top:0%  }
 `;
 const Left = styled.div`
   p {
@@ -72,7 +87,29 @@ const Left = styled.div`
     left: 50%;
     z-index: 11;
     text-shadow: 1px 1px 1px ${(props) => props.theme.fontxxxl};
+    @media only screen and (max-width: 1255px) {
+  left:5%;
+  font-size: 3rem;
+  line-height: 5rem;
   }
+  @media only screen and (max-width: 800px) {
+  left:5%;
+  top: 30rem;
+  font-size: 2rem;
+  line-height: 5rem;
+  }
+  @media only screen and (max-width: 600px) {
+top:20%  
+
+}
+@media only screen and (max-width: 430px) {
+  font-size: 2rem;
+  top:30rem;
+  line-height: 4rem;
+}
+  }
+ 
+
 `;
 const SubTextLight = styled.p`
   font-size: 20px;
@@ -87,6 +124,9 @@ const SubText = styled.p`
   font-weight: 300;
   position: absolute;
 `;
+const Right = styled.div`
+  }
+`  
 
 const Album = () => {
   return (
@@ -95,8 +135,13 @@ const Album = () => {
         <Box>
           <Carousel />
         </Box>
-        <Title data-scroll data-scroll-delay="1" data-scroll-speed="-3 ">
-          Find Your Dream Job
+        <Right>
+        <Title
+          data-scroll
+          data-scroll-delay="1"
+          data-scroll-speed="-3 "
+        >
+          Be The First To Experience The Future Of Healthcare
         </Title>
         <Left>
           <p data-scroll data-scroll-delay="0.5" data-scroll-speed="2 ">
@@ -107,13 +152,11 @@ const Album = () => {
             got you covered.
             <br />
             <br />
-            So why wait? Sign up for DoctorCONNECT today and experience the future of healthcare!
-
-
-
-
+            So why wait? Sign up for DoctorCONNECT today and experience the
+            future of healthcare!
           </p>
         </Left>
+      </Right>
       </Container>
     </Section>
   );

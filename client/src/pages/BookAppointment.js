@@ -43,9 +43,174 @@ function BookAppointment() {
       dispatch(hideLoading());
     }
   };
+  // const checkAvailability = async () => {
+  //   try {
+  //     dispatch(showLoading());
+  //     const response = await axios.post(
+  //       "/api/user/check-booking-avilability",
+  //       {
+  //         doctorId: params.doctorId,
+  //         date: date,
+  //         time: time,
+  //       },
+  //       {
+  //         headers: {
+  //           Authorization: `Bearer ${localStorage.getItem("token")}`,
+  //         },
+  //       }
+  //     );
+  //     dispatch(hideLoading());
+  //     if (response.data.success) {
+  //       toast.success(response.data.message);
+  //       setIsAvailable(true);
+  //     } else {
+  //       toast.error(response.data.message);
+  //     }
+  //   } catch (error) {
+  //     toast.error("Error booking appointment");
+  //     dispatch(hideLoading());
+  //   }
+  // };
+  
+  // const checkAvailability = async () => {
+  //   try {
+  //     dispatch(showLoading());
+  
+  //     // Check if selected date is within range
+  //     const selectedDate = moment(date, "DD-MM-YYYY");
+  //     const availableDateFrom = moment(doctor.availableFrom, "DD-MM-YYYY");
+  //     const availableDateTo = moment(doctor.availableTo, "DD-MM-YYYY");
+  
+  //     if (selectedDate.isBefore(availableDateFrom) || selectedDate.isAfter(availableDateTo)) {
+  //       toast.error("Selected date is not within available date range");
+  //       return;
+  //     }
+  
+  //     // Check if selected time is within range
+  //     const selectedTime = moment(time, "HH:mm");
+  //     const availableTimeFrom = moment(doctor.timings[0], "HH:mm");
+  //     const availableTimeTo = moment(doctor.timings[1], "HH:mm");
+  
+  //     if (selectedTime.isBefore(availableTimeFrom) || selectedTime.isAfter(availableTimeTo)) {
+  //       toast.error("Selected time is not within available time range");
+  //       return;
+  //     }
+  
+  //     // Check if booking slot is available
+  //     const response = await axios.post(
+  //       "/api/user/check-booking-avilability",
+  //       {
+  //         doctorId: params.doctorId,
+  //         date: date,
+  //         time: time,
+  //       },
+  //       {
+  //         headers: {
+  //           Authorization: `Bearer ${localStorage.getItem("token")}`,
+  //         },
+  //       }
+  //     );
+  
+  //     dispatch(hideLoading());
+  
+  //     if (response.data.success) {
+  //       toast.success(response.data.message);
+  //       setIsAvailable(true);
+  //     } else {
+  //       toast.error(response.data.message);
+  //     }
+  //   } catch (error) {
+  //     toast.error("Error checking booking availability");
+  //     dispatch(hideLoading());
+  //   }
+  // };
+  // const checkAvailability = async () => {
+  //   try {
+  //     dispatch(showLoading());
+  
+  //     // Check if selected date is within range
+  //     const selectedDate = moment(date, "DD-MM-YYYY");
+  //     const availableDateFrom = moment(doctor.availableFrom, "DD-MM-YYYY");
+  //     const availableDateTo = moment(doctor.availableTo, "DD-MM-YYYY");
+  
+  //     if (selectedDate.isBefore(availableDateFrom) || selectedDate.isAfter(availableDateTo)) {
+  //       toast.error("Selected date is not within available date range");
+  //       // setIsAvailable(false); // set isAvailable to false
+  //       return;
+  //     }
+  
+  //     // Check if selected time is within range
+  //     const selectedTime = moment(time, "HH:mm");
+  //     const availableTimeFrom = moment(doctor.timings[0], "HH:mm");
+  //     const availableTimeTo = moment(doctor.timings[1], "HH:mm");
+  
+  //     if (selectedTime.isBefore(availableTimeFrom) || selectedTime.isAfter(availableTimeTo)) {
+  //       toast.error("Selected time is not within available time range");
+  //       setIsAvailable(false); // set isAvailable to false
+  //       return;
+  //     }
+  
+  //     // Check if booking slot is available
+  //     const response = await axios.post(
+  //       "/api/user/check-booking-avilability",
+  //       {
+  //         doctorId: params.doctorId,
+  //         date: date,
+  //         time: time,
+  //       },
+  //       {
+  //         headers: {
+  //           Authorization: `Bearer ${localStorage.getItem("token")}`,
+  //         },
+  //       }
+  //     );
+  
+  //     dispatch(hideLoading());
+  
+  //     if (response.data.success) {
+  //       toast.success(response.data.message);
+  //       setIsAvailable(true);
+  //     } else {
+  //       toast.error(response.data.message);
+  //       setIsAvailable(false); // set isAvailable to false
+  //     }
+  //   } catch (error) {
+  //     toast.error("Error checking booking availability");
+  //     setIsAvailable(false); // set isAvailable to false
+  //     dispatch(hideLoading());
+  //   }
+  // };
+
   const checkAvailability = async () => {
     try {
       dispatch(showLoading());
+  
+      // Check if selected date is within range
+      const selectedDate = moment(date, "DD-MM-YYYY");
+      const availableDateFrom = moment(doctor.availableFrom, "DD-MM-YYYY");
+      const availableDateTo = moment(doctor.availableTo, "DD-MM-YYYY");
+  
+      if (selectedDate.isBefore(availableDateFrom) || selectedDate.isAfter(availableDateTo)) {
+        toast.error("Selected date is not within available date range");
+        dispatch(hideLoading());
+        return;
+      }
+  
+      // Check if selected time is within range
+      const selectedTime = moment(time, "HH:mm");
+      const availableTimeFrom = moment(doctor.timings[0], "HH:mm");
+      const availableTimeTo = moment(doctor.timings[1], "HH:mm");
+  
+      if (selectedTime.isBefore(availableTimeFrom) || selectedTime.isAfter(availableTimeTo)) {
+        toast.error("Selected time is not within available time range");
+        dispatch(hideLoading());
+        setTimeout(() => {
+          setIsAvailable(false);
+        }, 2000);
+        return;
+      }
+  
+      // Check if booking slot is available
       const response = await axios.post(
         "/api/user/check-booking-avilability",
         {
@@ -59,7 +224,9 @@ function BookAppointment() {
           },
         }
       );
+  
       dispatch(hideLoading());
+  
       if (response.data.success) {
         toast.success(response.data.message);
         setIsAvailable(true);
@@ -67,10 +234,13 @@ function BookAppointment() {
         toast.error(response.data.message);
       }
     } catch (error) {
-      toast.error("Error booking appointment");
+      toast.error("Error checking booking availability");
       dispatch(hideLoading());
     }
   };
+
+
+
   const bookNow = async () => {
     setIsAvailable(false);
     try {

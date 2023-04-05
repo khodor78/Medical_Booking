@@ -7,7 +7,9 @@ import { Badge } from "antd";
 function Layout({ children }) {
   const [collapsed, setCollapsed] = useState(false);
   const { user } = useSelector((state) => state.user);
-
+  const reload = ()=>{
+    window.location.reload()
+  }
   const navigate = useNavigate();
   const location = useLocation();
   const userMenu = [
@@ -62,11 +64,11 @@ function Layout({ children }) {
       path: "/admin/doctorslist",
       icon: "ri-user-star-line",
     },
-    {
-      name: "Profile",
-      path: "/profile",
-      icon: "ri-user-line",
-    },
+    // {
+    //   name: "Profile",
+    //   path: "/profile",
+    //   icon: "ri-user-line",
+    // },
   ];
 
   const menuToBeRendered = user?.isAdmin ? adminMenu : user?.isDoctor ? doctorMenu : userMenu;
@@ -102,7 +104,7 @@ function Layout({ children }) {
               }}
             >
               <i className="ri-logout-circle-line"></i>
-              {!collapsed && <Link to="/login">Logout</Link>}
+              {!collapsed && <Link onClick= { reload } to="/login">Logout</Link>}
             </div>
           </div>
         </div>
@@ -129,7 +131,7 @@ function Layout({ children }) {
                 <i className="ri-notification-line header-action-icon px-3"></i>
               </Badge>
 
-              <Link className="anchor mx-2" to="/profile">
+              <Link className=" anchor mx-2" to="/profile">
                 {user?.name}
               </Link>
             </div>

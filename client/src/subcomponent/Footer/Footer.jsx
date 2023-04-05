@@ -1,47 +1,47 @@
-import React from "react";
-import { Container, Row, Col, ListGroup, ListGroupItem } from "reactstrap";
+import React from 'react';
+import { Container, Row, Col, ListGroup, ListGroupItem } from 'reactstrap';
 
-import "./footer.css";
+import './footer.css';
 
 const footerQuickLinks = [
   {
-    display: "Home",
-    url: "#",
+    display: 'Home',
+    url: '#',
   },
   {
-    display: "About US",
-    url: "#",
-  },
-
-  {
-    display: "Courses",
-    url: "#",
+    display: 'About US',
+    url: '#',
   },
 
   {
-    display: "Blog",
-    url: "#",
+    display: 'Courses',
+    url: '#',
+  },
+
+  {
+    display: 'Blog',
+    url: '#',
   },
 ];
 
 const footerInfoLinks = [
   {
-    display: "Privacy Policy",
-    url: "#",
+    display: 'Privacy Policy',
+    url: '#',
   },
   {
-    display: "Membership",
-    url: "#",
-  },
-
-  {
-    display: "Purchases Guide",
-    url: "#",
+    display: 'Membership',
+    url: '#',
   },
 
   {
-    display: "Terms of Service",
-    url: "#",
+    display: 'Purchases Guide',
+    url: '#',
+  },
+
+  {
+    display: 'Terms of Service',
+    url: '#',
   },
 ];
 
@@ -58,28 +58,28 @@ const Footer = () => {
             <div className="follows">
               <p className="mb-0">Follow us on social media</p>
               <span>
-                {" "}
+                {' '}
                 <a href="facebook.com">
                   <i class="ri-facebook-line"></i>
                 </a>
               </span>
 
               <span>
-                {" "}
+                {' '}
                 <a href="facebook.com">
                   <i class="ri-instagram-line"></i>
                 </a>
               </span>
 
               <span>
-                {" "}
+                {' '}
                 <a href="facebook.com">
                   <i class="ri-linkedin-line"></i>
                 </a>
               </span>
 
               <span>
-                {" "}
+                {' '}
                 <a href="facebook.com">
                   <i class="ri-twitter-line"></i>
                 </a>
@@ -92,7 +92,7 @@ const Footer = () => {
             <ListGroup className="link__list">
               {footerQuickLinks.map((item, index) => (
                 <ListGroupItem key={index} className="border-0 ps-0 link__item">
-                  {" "}
+                  {' '}
                   <a href={item.url}>{item.display}</a>
                 </ListGroupItem>
               ))}
@@ -104,7 +104,7 @@ const Footer = () => {
             <ListGroup className="link__list">
               {footerInfoLinks.map((item, index) => (
                 <ListGroupItem key={index} className="border-0 ps-0 link__item">
-                  {" "}
+                  {' '}
                   <a href={item.url}>{item.display}</a>
                 </ListGroupItem>
               ))}
@@ -115,7 +115,7 @@ const Footer = () => {
             <h6 className="fw-bold">Get in Touch</h6>
 
             <p>Address: Lebanon,Saida</p>
-            <p> Phone: +71 44 6890 </p>
+            <p> Phone: +71 00 0000 </p>
             <p>Email: example@gmail.com</p>
           </Col>
         </Row>

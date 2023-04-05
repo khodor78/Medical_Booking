@@ -1,13 +1,32 @@
-import React from "react";
-import "./about.css";
-import { Container, Row, Col } from "reactstrap";
-import aboutImg from "../../assests/images/about-us.png";
-import CountUp from "react-countup";
-import "./about.css";
+import React, { useEffect, useRef, useState } from 'react';
+import './about.css';
+import { Container, Row, Col } from 'reactstrap';
+import aboutImg from '../../assests/two.avif';
+import CountUp from 'react-countup';
 
-const AboutUs = () => {
+const AboutUs = ({ id }) => {
+  const sectionRef = useRef(null);
+  const [shouldAnimate, setShouldAnimate] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (
+        sectionRef.current &&
+        window.pageYOffset >= sectionRef.current.offsetTop - window.innerHeight
+      ) {
+        setShouldAnimate(true);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
-    <section>
+    <section ref={sectionRef} id={id}>
       <Container>
         <Row>
           <Col lg="6" md="6">
@@ -26,10 +45,17 @@ const AboutUs = () => {
               </p>
 
               <div className="about__counter">
-                <div className=" d-flex gap-5 align-items-center">
+                <div className="d-flex gap-5 align-items-center">
                   <div className="single__counter">
                     <span className="counter">
-                      <CountUp start={0} end={25} duration={2} suffix="K" />
+                      <CountUp
+                        start={0}
+                        end={25}
+                        duration={2}
+                        suffix="K"
+                        redraw={true}
+                        preserveValue={shouldAnimate}
+                      />
                     </span>
 
                     <p className="counter__title">Completed Projects</p>
@@ -37,17 +63,31 @@ const AboutUs = () => {
 
                   <div className="single__counter">
                     <span className="counter">
-                      <CountUp start={0} end={12} duration={2} suffix="M" />
+                      <CountUp
+                        start={0}
+                        end={12}
+                        duration={2}
+                        suffix="M"
+                        redraw={true}
+                        preserveValue={shouldAnimate}
+                      />
                     </span>
 
                     <p className="counter__title">Patient Around World</p>
                   </div>
                 </div>
 
-                <div className=" d-flex gap-5 align-items-center">
+                <div className="d-flex gap-5 align-items-center mb-4">
                   <div className="single__counter">
                     <span className="counter">
-                      <CountUp start={0} end={95} duration={2} suffix="M" />
+                      <CountUp
+                        start={0}
+                        end={95}
+                        duration={2}
+                        suffix="M"
+                        redraw={true}
+                        preserveValue={shouldAnimate}
+                      />
                     </span>
 
                     <p className="counter__title">Ideas Raised Funds</p>
@@ -55,19 +95,26 @@ const AboutUs = () => {
 
                   <div className="single__counter">
                     <span className="counter">
-                      <CountUp start={0} end={5} duration={2} suffix="K" />
+                      <CountUp
+                        start={0}
+                        end={5}
+                        duration={2}
+                        suffix="K"
+                        redraw={true}
+                        preserveValue={shouldAnimate}
+                      />
                     </span>
 
-                    <p className="counter__title">Categories Served</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </Col>
-        </Row>
-      </Container>
-    </section>
-  );
+                    <p className="counter__title">Years of Experience</p>
+</div>
+</div>
+</div>
+</div>
+</Col>
+</Row>
+</Container>
+</section>
+);
 };
 
 export default AboutUs;
