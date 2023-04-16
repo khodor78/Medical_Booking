@@ -7,13 +7,13 @@ import { useNavigate } from 'react-router-dom';
 const navLinks = [
   { display: 'Home', url: '#', onClick: () => scrollToSection('headersa') },
   { display: 'About', url: 'Homepage#About', onClick: () => scrollToSection('About') },
-  { display: 'Courses', url: '#', onClick: () => scrollToSection('Courses') },
+  { display: 'Services', url: 'Homepage#Services', onClick: () => scrollToSection('Services') },
   {
     display: 'Testemonial',
-    url: '#Testemonial',
+    url: 'Homepage#Testemonial',
     onClick: () => scrollToSection('Testemonial'),
   },
-  { display: 'Blog', url: '#Blog', onClick: () => scrollToSection('Blog') },
+  // { display: 'Blog', url: '#Blog', onClick: () => scrollToSection('Blog') },
 ];
 
 const scrollToSection = (id) => {

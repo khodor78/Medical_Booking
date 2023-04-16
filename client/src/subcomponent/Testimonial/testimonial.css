@@ -1,3 +1,10 @@
 .testimonial__content h2 {
   font-weight: 600;
 }
+.single__testimonial p {
+  color: red;
+  font-size: 16px;
+  line-height: 1.8;
+  font-weight: 400;
+  margin-bottom: 20px;
+}

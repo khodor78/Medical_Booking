@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './Homepage.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'remixicon/fonts/remixicon.css';
@@ -13,13 +13,23 @@ import Album from '../subcomponent/Album/Album';
 import AboutUs from '../subcomponent/About-us/AboutUs';
 
 function Homepage() {
+  useEffect(() => {
+    const hash = window.location.hash;
+    if (hash) {
+      const section = document.querySelector(hash);
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  }, []);
+
   return (
     <div>
       <Header />
-      <div className="sec">
-        <HeroSection />
-      </div>
-       <AboutUs id="About" /> 
+      {/* <div className="sec"> */}
+      <HeroSection />
+      {/* </div> */}
+      <AboutUs id="About" />
 
       <section class="section">
         <div class="product-banner">
@@ -43,6 +53,7 @@ function Homepage() {
       <Album />
 
       <section class="section" id="Testemonial">
+        <h2 className="center"> What our Client says about us!</h2>
         <div class="testimonial-center container">
           <div class="testimonial">
             <span>&ldquo;</span>
@@ -111,7 +122,7 @@ function Homepage() {
       </section>
       <Faq />
 
-      <Footer /> 
+      <Footer />
     </div>
   );
 }

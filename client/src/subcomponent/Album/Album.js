@@ -54,12 +54,12 @@ const Box = styled.div`
 //   }
 // `;
 const Title = styled.h1`
-  font-size: 2r em;
+  font-size: 2rem;
   font-family: 'Montserrat', sans-serif;
   font-weight: 300;
   position: absolute;
   top: 7rem;
-  color: ${(props) => props.theme.text};
+  color:white;
   left: 50%;
   z-index: 11;
   text-shadow: 1px 1px 1px ${(props) => props.theme.fontxxxl};
@@ -83,7 +83,8 @@ const Left = styled.div`
     font-weight: 150;
     position: absolute;
     top: 20rem;
-    color: #fff;
+    letter-spacing: 0.2rem;;
+    color: white !important;
     left: 50%;
     z-index: 11;
     text-shadow: 1px 1px 1px ${(props) => props.theme.fontxxxl};
@@ -130,8 +131,8 @@ const Right = styled.div`
 
 const Album = () => {
   return (
-    <Section id="service">
-      <Container>
+    <Section id="Services">
+      <Container  >
         <Box>
           <Carousel />
         </Box>

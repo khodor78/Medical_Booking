@@ -1,6 +1,6 @@
 .hero__wrapper {
   width: auto;
-    max-height: 70vh;
+    max-height: 100vh;
   padding-top: 140px;
   padding-left: 6rem;
 }
@@ -151,12 +151,12 @@
   }
   }
   
-  .hero__wrapper {
-  width: auto;
-  max-height: 70vh;
-  padding-top: 140px;
-  padding-left: 6rem;
-  }
+    /* .hero__wrapper {
+    width: auto;
+    max-height: 70vh;
+    padding-top: 140px;
+    padding-left: 6rem;
+    } */
   
   .hero__img {
   width: 100%;

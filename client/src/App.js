@@ -33,7 +33,7 @@ function App() {
           path="/Homepage"
           element={
             <PublicRoute>
-              <Homepage />
+              <Homepage  />
             </PublicRoute>
           }
         />

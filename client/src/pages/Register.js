@@ -7,6 +7,7 @@
   import { hideLoading, showLoading } from '../redux/alertsSlice';
   import Header from '../subcomponent/Header/Header';
   import './Register.css';
+// import Headers from '../subcomponent/Header/Headers';
 
   function Register() {
     const dispatch = useDispatch();

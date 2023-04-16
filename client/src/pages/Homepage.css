@@ -10,7 +10,16 @@
   box-sizing: border-box;
   scroll-behavior: smooth;
 }
+.center {
+  text-align: center;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
 
+.center h2 {
+  font-size: 3rem;
+  font-weight: bold;
+}
 section,
 footer {
   padding-top: 70px;
@@ -187,6 +196,11 @@ button.btn {
 
 .testimonial p {
   margin: 2rem 0 1rem 0;
+  color: #fff;
+  font-size: 16px;
+  line-height: 1.8;
+  font-weight: 400;
+  margin-bottom: 20px;
 }
 
 .testimonial .rating {
@@ -271,4 +285,7 @@ li {
 
 i {
   color: #17bf9e;
+}
+section p {
+  color: red;
 }

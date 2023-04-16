@@ -108,7 +108,7 @@ const HeroSection = () => {
             />
           </Col>
         </Row>
-        <Row className="mt-5">
+        {/* <Row className="mt-5">
           <Col lg="4" md="4" sm="12">
             <div className="hero__services">
               <img src={crown} alt="Crown icon" />
@@ -139,10 +139,10 @@ const HeroSection = () => {
               </p>
             </div>
           </Col>
-        </Row>
+        </Row> */}
       </Container>
 
-      <FloatinDiv />
+      {/* <FloatinDiv /> */}
     </motion.section>
     </div>
   );

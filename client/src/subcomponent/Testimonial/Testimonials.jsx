@@ -1,9 +1,9 @@
-import React from "react";
-import "./testimonial.css";
-import { Container, Row, Col } from "reactstrap";
-import Slider from "react-slick";
+import React from 'react';
+import './testimonial.css';
+import { Container, Row, Col } from 'reactstrap';
+import Slider from 'react-slick';
 
-import img from "../../assests/images/testimonial01.png";
+import img from '../../assests/images/testimonial01.png';
 
 const Testimonials = () => {
   const settings = {
@@ -15,6 +15,7 @@ const Testimonials = () => {
     autoplaySpeed: 3000,
     slidesToScroll: 1,
   };
+
   return (
     <section>
       <Container>

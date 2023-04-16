@@ -4,22 +4,23 @@ import './features.css';
 
 const FeatureData = [
   {
-    title: 'Quick Learning',
+    title: 'Easy Medical Booking',
     desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum molestias, aperiam doloribus aut sapiente praesentium eos iste dicta amet itaque!',
-    icon: 'ri-draft-line',
+    icon: 'ri-calendar-check-line',
   },
-
+  
   {
     title: 'All Time Support',
     desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum molestias, aperiam doloribus aut sapiente praesentium eos iste dicta amet itaque!',
-    icon: 'ri-discuss-line',
+    icon: 'ri-heart-pulse-line',
   },
-
+  
   {
-    title: 'Certification',
+    title: 'Schedule Your Medical Appointment',
     desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum molestias, aperiam doloribus aut sapiente praesentium eos iste dicta amet itaque!',
-    icon: 'ri-contacts-book-line',
+    icon: 'ri-calendar-line',
   },
+  
 ];
 
 const Features = ({ id }) => {
