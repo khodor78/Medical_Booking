@@ -1,6 +1,6 @@
 /* About section */
 .about {
-  padding-top: 100px;
+  padding-top: 50px;
   background-color: #fff;
 }
 
@@ -33,6 +33,7 @@
 
 .about__counter {
   display: flex;
+  padding-top:50px;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
